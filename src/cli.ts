@@ -27,7 +27,7 @@ export const cli = (cliArgs: string[]): void => {
 
   program
     .command('list <rootDir>')
-    .description('list all routes to serve')
+    .description('list all routes to serve from folder <rootDir>')
     .action((rootDir) => {
       listRoutes(rootDir)
     })
