@@ -3,7 +3,7 @@ import * as chalk from 'chalk'
 
 import Restapify, { RestapifyParams } from 'restapify'
 
-import { getInstanceOverviewOutput, getMethodOutput, onRestapifyInstanceError } from './utils'
+import { getInstanceOverviewOutput, getRoutesListOutput, onRestapifyInstanceError } from './utils'
 
 export const startServer = (options: RestapifyParams): void => {
   const {
@@ -32,14 +32,9 @@ export const startServer = (options: RestapifyParams): void => {
   })
 
   RestapifyInstance.on('start', () => {
-    const servedRoutes = RestapifyInstance.getServedRoutes()
+    const servedRoutesOutput = getRoutesListOutput(RestapifyInstance.getServedRoutes())
 
-    servedRoutes.forEach(servedRoute => {
-      let methodOutput = getMethodOutput(servedRoute.method)
-
-      console.log(`${methodOutput} ${servedRoute.route}`)
-    })
-
+    console.log(servedRoutesOutput)
     console.log(getInstanceOverviewOutput(
       RestapifyInstance.port,
       RestapifyInstance.apiBaseUrl

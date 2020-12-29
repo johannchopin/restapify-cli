@@ -69,3 +69,17 @@ export const onRestapifyInstanceError = (
 
   console.log(logMessage)
 }
+
+export const getRoutesListOutput = (
+  routesList: { route: string; method: HttpVerb; }[]
+): string => {
+  let output = ''
+
+  routesList.forEach(servedRoute => {
+    let methodOutput = getMethodOutput(servedRoute.method)
+
+    output += `\n${methodOutput} ${servedRoute.route}`
+  })
+
+  return output
+}
