@@ -1,4 +1,3 @@
-import * as path from 'path'
 import * as chalk from 'chalk'
 
 import Restapify, { RestapifyParams } from 'restapify'
@@ -14,7 +13,7 @@ export const startServer = (options: RestapifyParams): void => {
   } = options
 
   const RestapifyInstance = new Restapify({
-    rootDir: path.resolve(rootDir),
+    rootDir,
     port: port,
     baseUrl: baseUrl,
     openDashboard: openDashboard

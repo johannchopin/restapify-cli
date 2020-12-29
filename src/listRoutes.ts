@@ -1,11 +1,10 @@
-import * as path from 'path'
 import Restapify from 'restapify'
 
 import { getRoutesListOutput, onRestapifyInstanceError } from './utils'
 
 export const listRoutes = (rootDir: string): void => {
   const RestapifyInstance = new Restapify({
-    rootDir: path.resolve(rootDir),
+    rootDir,
     openDashboard: false
   })
 
