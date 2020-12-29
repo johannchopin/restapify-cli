@@ -5,6 +5,7 @@ import * as packageJson from '../package.json'
 
 import { listRoutes } from './listRoutes'
 import { startServer } from './startServer'
+import { startServerFromConfig } from './startServerFromConfig'
 
 export const cli = (cliArgs: string[]): void => {
   program
@@ -32,6 +33,11 @@ export const cli = (cliArgs: string[]): void => {
     .action((rootDir): void => {
       listRoutes(path.resolve(rootDir))
     })
+
+  program
+    .arguments('[pathToConfig]')
+    .action((pathToConfig = './restapify.config.json'): void => {
+      startServerFromConfig(path.resolve(pathToConfig))
     })
 
   program.parse(cliArgs)
