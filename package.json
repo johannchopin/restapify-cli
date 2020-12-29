@@ -20,7 +20,7 @@
     "chalk": "^4.1.0",
     "commander": "^6.2.1",
     "path": "^0.12.7",
-    "restapify": "^0.0.16"
+    "restapify": "^0.0.18"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",
