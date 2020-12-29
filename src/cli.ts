@@ -2,7 +2,7 @@ import { program } from 'commander'
 
 import * as packageJson from '../package.json'
 
-import { startRestapifyServer } from './startRestapifyServer'
+import { startServer } from './startServer'
 
 export const cli = (cliArgs: string[]): void => {
   program
@@ -16,12 +16,19 @@ export const cli = (cliArgs: string[]): void => {
     .command('serve <rootDir>')
     .description('serve a mocked API from folder <rootDir>')
     .action((rootDir, options) => {
-      startRestapifyServer({
+      startServer({
         rootDir,
         baseUrl: options.parent.baseUrl,
         port: options.parent.port,
         openDashboard: options.parent.open
       })
+    })
+
+  program
+    .command('list')
+    .description('list all routes to serve')
+    .action(() => {
+      console.log('test')
     })
 
   program.parse(cliArgs)

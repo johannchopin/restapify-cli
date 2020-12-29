@@ -5,7 +5,7 @@ import Restapify, { RestapifyParams } from 'restapify'
 
 import { getInstanceOverviewOutput, getMethodOutput, onRestapifyInstanceError } from './utils'
 
-export const startRestapifyServer = (options: RestapifyParams): void => {
+export const startServer = (options: RestapifyParams): void => {
   const {
     rootDir,
     port,
