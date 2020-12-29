@@ -2,6 +2,7 @@ import { program } from 'commander'
 
 import * as packageJson from '../package.json'
 
+import { listRoutes } from './listRoutes'
 import { startServer } from './startServer'
 
 export const cli = (cliArgs: string[]): void => {
@@ -25,10 +26,10 @@ export const cli = (cliArgs: string[]): void => {
     })
 
   program
-    .command('list')
-    .description('list all routes to serve')
-    .action(() => {
-      console.log('test')
+    .command('list <rootDir>')
+    .description('list all routes to serve from folder <rootDir>')
+    .action((rootDir) => {
+      listRoutes(rootDir)
     })
 
   program.parse(cliArgs)

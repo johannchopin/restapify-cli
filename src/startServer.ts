@@ -32,7 +32,10 @@ export const startServer = (options: RestapifyParams): void => {
   })
 
   RestapifyInstance.on('start', () => {
-    const servedRoutesOutput = getRoutesListOutput(RestapifyInstance.getServedRoutes())
+    const servedRoutesOutput = getRoutesListOutput(
+      RestapifyInstance.getServedRoutes(),
+      RestapifyInstance.apiBaseUrl
+    )
 
     console.log(servedRoutesOutput)
     console.log(getInstanceOverviewOutput(
