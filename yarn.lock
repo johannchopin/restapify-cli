@@ -4559,10 +4559,10 @@ restapify-dashboard@^1.0.9:
     popper.js "^1.16.1"
     sirv-cli "^1.0.0"
 
-restapify@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/restapify/-/restapify-0.0.19.tgz#76449f12e0ca0d9f90cfba5bab8a445f77056d30"
-  integrity sha512-rkMiSKif0uRE827V94ZIUMhyWsgSOAacNxsfUJKH6THanhu5okl7DlWUhypMkM2Wts87XWvL0Zy6iMvhnvIIrQ==
+restapify@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/restapify/-/restapify-0.0.20.tgz#cfe438171f39d8b4d61f8b8d7b5f5077750a27e2"
+  integrity sha512-Nru6tF4lqChS/O0yK3zugK3DuSKxQbglygGV+JOktdzDMuqmxfvhC8KXemHsZrsZb8PrXwDgUEcS5jQwL4EcFg==
   dependencies:
     chokidar "^3.4.3"
     esm "^3.2.25"

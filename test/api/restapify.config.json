@@ -1,0 +1,12 @@
+{
+  "rootDir": ".",
+  "apiBaseUrl": "api/",
+  "port": 6767,
+  "states": [
+    {
+      "route": "/users/[userid]",
+      "method": "DELETE",
+      "state": "ERR"
+    }
+  ]
+}

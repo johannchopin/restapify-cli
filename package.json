@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest --silent --passWithNoTests --no-cache",
+    "test": "jest --passWithNoTests --no-cache",
     "build": "yarn tsc",
     "lint": "yarn eslint . --ext .js,.ts"
   },
@@ -20,7 +20,7 @@
     "chalk": "^4.1.0",
     "commander": "^6.2.1",
     "path": "^0.12.7",
-    "restapify": "^0.0.19"
+    "restapify": "^0.0.20"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",

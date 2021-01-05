@@ -1,9 +1,11 @@
+import * as path from 'path'
 import { program } from 'commander'
 
 import * as packageJson from '../package.json'
 
 import { listRoutes } from './listRoutes'
 import { startServer } from './startServer'
+import { startServerFromConfig } from './startServerFromConfig'
 
 export const cli = (cliArgs: string[]): void => {
   program
@@ -16,9 +18,9 @@ export const cli = (cliArgs: string[]): void => {
   program
     .command('serve <rootDir>')
     .description('serve a mocked API from folder <rootDir>')
-    .action((rootDir, options) => {
+    .action((rootDir, options): void => {
       startServer({
-        rootDir,
+        rootDir: path.resolve(rootDir),
         baseUrl: options.parent.baseUrl,
         port: options.parent.port,
         openDashboard: options.parent.open
@@ -28,8 +30,14 @@ export const cli = (cliArgs: string[]): void => {
   program
     .command('list <rootDir>')
     .description('list all routes to serve from folder <rootDir>')
-    .action((rootDir) => {
-      listRoutes(rootDir)
+    .action((rootDir): void => {
+      listRoutes(path.resolve(rootDir))
+    })
+
+  program
+    .arguments('[pathToConfig]')
+    .action((pathToConfig = './restapify.config.json'): void => {
+      startServerFromConfig(path.resolve(pathToConfig))
     })
 
   program.parse(cliArgs)
