@@ -3,9 +3,9 @@ import { program } from 'commander'
 
 import * as packageJson from '../package.json'
 
-import { listRoutes } from './listRoutes'
-import { startServer } from './startServer'
-import { startServerFromConfig } from './startServerFromConfig'
+import { listRoutes } from './run/listRoutes'
+import { startServer } from './run/startServer'
+import { startServerFromConfig } from './run/startServerFromConfig'
 
 export const cli = (cliArgs: string[]): void => {
   program

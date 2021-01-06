@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-import { runServer } from './utils'
+import { runServer } from '../utils'
 
 export const startServerFromConfig = (configFilePath: string): void => {
   // TODO: Test that file exist

@@ -1,6 +1,6 @@
 import Restapify from 'restapify'
 
-import { getRoutesListOutput, onRestapifyInstanceError } from './utils'
+import { getRoutesListOutput, onRestapifyInstanceError } from '../utils'
 
 export const listRoutes = (rootDir: string): void => {
   const RestapifyInstance = new Restapify({
