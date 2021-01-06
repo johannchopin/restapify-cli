@@ -1,7 +1,7 @@
 {
-  "rootDir": ".",
+  "rootDir": "./api",
   "apiBaseUrl": "api/",
-  "port": 6767,
+  "port": 6768,
   "states": [
     {
       "route": "/users/[userid]",
