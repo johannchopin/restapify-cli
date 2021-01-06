@@ -5,7 +5,8 @@ import { getRoutesListOutput, onRestapifyInstanceError } from '../utils'
 export const listRoutes = (rootDir: string): void => {
   const RestapifyInstance = new Restapify({
     rootDir,
-    openDashboard: false
+    openDashboard: false,
+    hotWatch: false
   })
 
   RestapifyInstance.onError(({ error }) => {
@@ -25,7 +26,6 @@ export const listRoutes = (rootDir: string): void => {
     console.log(servedRoutesOutput)
 
     RestapifyInstance.close()
-    process.exit(0)
   })
 
   RestapifyInstance.run({ startServer: false })
