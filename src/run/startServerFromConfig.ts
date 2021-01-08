@@ -1,7 +1,16 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import { ValidationError } from 'jsonschema'
 
 import { consoleError, runServer, validateConfig } from '../utils'
+
+const outputConfigErrors = (errors: ValidationError[]): void => {
+  consoleError('Invalid configuration file:')
+
+  errors.forEach(error => {
+    console.log(`- ${error.message}`)
+  })
+}
 
 export const startServerFromConfig = (configFilePath: string): void => {
   const configFileExists = fs.existsSync(configFilePath)
@@ -18,8 +27,7 @@ export const startServerFromConfig = (configFilePath: string): void => {
   const validatedConfig = validateConfig(config)
 
   if (!validatedConfig.valid) {
-    // TODO: Better errors output
-    consoleError(JSON.stringify(validatedConfig.errors))
+    outputConfigErrors(validatedConfig.errors)
     return
   }
 
