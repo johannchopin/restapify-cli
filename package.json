@@ -19,6 +19,7 @@
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
     "commander": "^6.2.1",
+    "jsonschema": "^1.4.0",
     "path": "^0.12.7",
     "restapify": "^0.0.20"
   },
