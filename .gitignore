@@ -5,6 +5,6 @@ dist/
 yarn-error.log
 
 # jest
-test/coverage/
+coverage/
 
 .vscode/
