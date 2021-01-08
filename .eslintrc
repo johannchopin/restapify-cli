@@ -39,6 +39,7 @@
         "ignoreTemplateLiterals": true
       }
     ],
+    "no-console": "off",
     "no-unused-vars": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
