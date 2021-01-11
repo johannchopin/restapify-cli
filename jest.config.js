@@ -7,7 +7,8 @@ module.exports = {
   collectCoverageFrom: [
     "!**/node_modules/**",
     "./src/**"
-],
+  ],
+  coverageReporters: ["html", "lcov"],
   bail: false,
   verbose: true
 }
