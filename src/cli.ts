@@ -1,5 +1,5 @@
 import * as path from 'path'
-import { program } from 'commander'
+import { Command } from 'commander'
 
 import * as packageJson from '../package.json'
 
@@ -8,6 +8,8 @@ import { startServer } from './run/startServer'
 import { startServerFromConfig } from './run/startServerFromConfig'
 
 export const cli = (cliArgs: string[]): void => {
+  const program = new Command()
+
   program
     .version(packageJson.version, '-v, --version', 'output the current version')
     .option('-p, --port <number>', 'port to serve Restapify instance')
