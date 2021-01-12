@@ -35,4 +35,36 @@ describe('Test `serve` command', () => {
     expect(Restapify.mock.calls.length).toBe(1)
     expect(Restapify.mock.calls[0][0]).toStrictEqual(expectedOptionsInConstuctor)
   })
+
+  it('should init Restapify\'s instance with custom options', () => {
+    const CUSTOM_BASEURL = '/api/test'
+    const CUSTOM_PORT = '0000'
+    const expectedOptionsInConstuctor = {
+      rootDir: pathToApiFolder,
+      openDashboard: false, 
+      baseUrl: CUSTOM_BASEURL, 
+      port: CUSTOM_PORT
+    }
+    const args = `yarn restapify serve ${pathToApiFolder} --no-open --baseUrl ${CUSTOM_BASEURL} --port ${CUSTOM_PORT}`
+    cli(args.split(' '))
+
+    expect(Restapify.mock.calls.length).toBe(1)
+    expect(Restapify.mock.calls[0][0]).toStrictEqual(expectedOptionsInConstuctor)
+  })
+
+  it('should init Restapify\'s instance with custom short options', () => {
+    const CUSTOM_BASEURL = '/api/test'
+    const CUSTOM_PORT = '42'
+    const expectedOptionsInConstuctor = {
+      rootDir: pathToApiFolder,
+      openDashboard: true, 
+      baseUrl: CUSTOM_BASEURL, 
+      port: CUSTOM_PORT
+    }
+    const args = `yarn restapify serve ${pathToApiFolder} -o -b ${CUSTOM_BASEURL} -p ${CUSTOM_PORT}`
+    cli(args.split(' '))
+
+    expect(Restapify.mock.calls.length).toBe(1)
+    expect(Restapify.mock.calls[0][0]).toStrictEqual(expectedOptionsInConstuctor)
+  })
 })
