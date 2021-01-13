@@ -1,5 +1,4 @@
 import * as path from 'path'
-const chalk = require('chalk')
 
 import { cli } from '../../src/cli'
 
