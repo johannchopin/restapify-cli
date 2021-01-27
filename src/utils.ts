@@ -51,7 +51,8 @@ export const getInstanceOverviewOutput = (port: number, apiBaseURL: string): str
   const dashboardURLLink = chalk.blueBright(`http://localhost:${port}/restapify`)
   const apiBaseURLOutput = `${apiBaseURLTitle} ${apiBaseURLLink}`
   const dashboardURLOutput = `${dashboardURLTitle} ${dashboardURLLink}`
-  return boxen(`${runningTitle}\n\n${apiBaseURLOutput}\n${dashboardURLOutput} `, { padding: 1, borderColor: 'magenta' })
+  const killProcessInfo = chalk.yellowBright('Use Ctrl+C to quit this process')
+  return boxen(`${runningTitle}\n\n${apiBaseURLOutput}\n${dashboardURLOutput}\n\n${killProcessInfo}`, { padding: 1, borderColor: 'magenta' })
 }
 
 export const onRestapifyInstanceError = (
