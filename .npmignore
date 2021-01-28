@@ -1,6 +1,7 @@
-babel.config.js
-jest.config.js
-tsconfig.json
+./babel.config.js
+./jest.config.js
+./tsconfig.json
 
-src/
-test/
+./coverage/
+./src/
+./test/cd
