@@ -1,6 +1,6 @@
 {
   "name": "restapify-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/cli.js",
   "repository": "git@github.com:johannchopin/restapify-cli.git",
   "author": "johannchopin <johannchopin@pm.me>",
