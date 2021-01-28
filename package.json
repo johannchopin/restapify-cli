@@ -12,8 +12,8 @@
     "lint": "yarn eslint . --ext .js,.ts"
   },
   "bin": {
-    "@johannchopin/restapify": "bin/restapify",
-    "restapify": "bin/restapify"
+    "@johannchopin/restapify": "./bin/restapify",
+    "restapify": "./bin/restapify"
   },
   "dependencies": {
     "boxen": "^4.2.0",
