@@ -17,16 +17,10 @@ export const listRoutes = (rootDir: string): void => {
     })
   })
 
-  RestapifyInstance.on('start', () => {
-    const servedRoutesOutput = getRoutesListOutput(
-      RestapifyInstance.getServedRoutes(),
-      RestapifyInstance.apiBaseUrl
-    )
+  const servedRoutesOutput = getRoutesListOutput(
+    RestapifyInstance.getServedRoutes(),
+    RestapifyInstance.apiBaseUrl
+  )
 
-    console.log(servedRoutesOutput)
-
-    RestapifyInstance.close()
-  })
-
-  RestapifyInstance.run({ startServer: false })
+  console.log(servedRoutesOutput)
 }
